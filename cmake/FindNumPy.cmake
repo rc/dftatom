@@ -1,5 +1,7 @@
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+
 execute_process(
-	COMMAND python -c "import numpy; print(numpy.get_include())"
+	COMMAND ${Python3_EXECUTABLE} -c "import numpy; print(numpy.get_include())"
 	OUTPUT_VARIABLE PYTHON_SYS_PATH
 	)
 string(STRIP ${PYTHON_SYS_PATH} PYTHON_SYS_PATH)
